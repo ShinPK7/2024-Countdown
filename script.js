@@ -1,5 +1,16 @@
-const alertButton = document.querySelector("button");
+const countDownDate = new Date("Jan 1, 2024 01:00:00").getTime();
 
-alertButton.addEventListener("click", function () {
-  alert("Hello! this is button from second commit!!!");
-});
+// document.getElementById("countdown").innerHTML = countDownDate;
+
+const countDownTrigger = () => {
+
+  const now = new Date().getTime();
+
+  const distances = countDownDate - now;
+
+  const days = Math. floor(distances / (1000 *60 * 60 * 24));
+
+  document.getElementById("countdown").innerHTML = days;
+};
+
+countDownTrigger();
