@@ -11,8 +11,13 @@ const countDownTrigger = () => {
   const hours = Math.floor(
     (distances % (1000 *60 * 60 * 24)) / (1000 * 60 * 60)
   );
+  const minutes = Math.floor((distances %(1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distances % (1000 * 60)) / 1000)
 
-  document.getElementById("countdown").innerHTML = days + "d " + hours + " h";
+  document.getElementById("countdown").innerHTML = days + "d " + hours + "h " +minutes + "m " + seconds + "s";
+
 };
+
+const countdown = setInterval(countDownTrigger, 300)
 
 countDownTrigger();
